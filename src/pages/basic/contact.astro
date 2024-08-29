@@ -6,37 +6,7 @@ import Basic from '../../layouts/Basic.astro';
 ---
 
 <Basic title="Contact" page="contact">
-<h2 id="email">Email me</h2>
-<form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true" Content-Type="application/x-www-form-urlencoded">
-  <input type="hidden" name="form-name" value="contact" />
-  <p>
-    <label
-      >Name:
-      <br /><input type="text" name="name" required /></label
-    >
-  </p>
-  <p>
-    <label
-      >Email address:
-      <br /><input type="email" name="email" required /></label
-    >
-  </p>
-  <p>
-    <label>Subject <small>(please skip this field if you're real)</small>
-      <br /><input type="text" name="bot-field" placeholder="Leave me be!" />
-      <small>Are you sure you want to type in here? I won't get your message!</small>
-    </label>
-  </p>
-  <p>
-    <label class="message">Message:<br /><textarea name="message" required /></label>
-  </p>
-  <p>
-    <label class="consent"><input type="checkbox" required><small>I consent to <a href="https://www.netlify.com/platform/core/forms/">Netlify Forms</a> receiving this message and passing it through <a href="https://akismet.com/">Akismet</a> spam filtering. <a href="#privacy-policy">Privacy policy.</a></small></label>
-  </p>
-  <p>
-    <button type="submit"><b>Send Email</b></button>
-  </p>
-</form>
+
 <h2 id="socials">Social Links</h2>
 <ul>
   <li>
