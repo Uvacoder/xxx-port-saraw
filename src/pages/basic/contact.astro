@@ -1,11 +1,6 @@
 ---
 import PrivacyPolicy from '../../components/PrivacyPolicy.astro';
 import Basic from '../../layouts/Basic.astro';
-async function getGuestEntries() {
-  const response = await fetch(new Request(`https://api.netlify.com/api/v1/forms/${import.meta.env.GUESTBOOK_ID}/submissions`, {method: 'GET', headers: {'Authorization': `Bearer ${import.meta.env.NETLIFY_ACCESS}`}}));
-  return response.json();
-}
-const entries = await getGuestEntries();
 
 // import PrivacyPolicy from '../../components/PrivacyPolicy.astro';
 ---
@@ -87,43 +82,7 @@ const entries = await getGuestEntries();
     </a>
   </li> -->
 </ul>
-<h2 id="guestbook">Sign the Guestbook</h2>
-  <form name="guestbook" method="POST" netlify-honeypot="bot-field" data-netlify="true" Content-Type="application/x-www-form-urlencoded">
-    <input type="hidden" name="form-name" value="guestbook" />
-    <p>
-      <label
-        >Name
-        <br /><input type="text" name="name" required /></label
-      >
-    </p>
-    <p>
-      <label
-        >Email <small>(optional, not published)</small>
-        <br /><input type="email" name="email" /></label
-      >
-    </p>
-    <p>
-      <label
-        >URL <small>(optional, linked from Name)</small>
-        <br /><input type="url" name="url" placeholder="https://example.com" pattern="https://.*" /></label
-      >
-    </p>
-    <p>
-      <label>Subject <small>(please skip this field if you're real)</small>
-        <br /><input type="text" name="bot-field" placeholder="Leave me be!" />
-        <small>Are you sure you want to type in here? I won't get your message!</small>
-      </label>
-    </p>
-    <p>
-      <label class="message">Message<br /><textarea name="message" required /></label>
-    </p>
-    <p>
-      <label class="consent"><input type="checkbox" required><small>I consent to <a href="https://www.netlify.com/platform/core/forms/">Netlify Forms</a> receiving this message and passing it through <a href="https://akismet.com/">Akismet</a> spam filtering. <a href="#privacy-policy">Privacy policy.</a></small></label>
-    </p>
-    <p>
-      <button type="submit"><b>Sign Guestbook</b></button>
-    </p>
-  </form>
+
 
   <PrivacyPolicy />
 
